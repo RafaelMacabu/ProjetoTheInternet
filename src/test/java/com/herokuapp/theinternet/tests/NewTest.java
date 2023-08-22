@@ -1,10 +1,7 @@
 package com.herokuapp.theinternet.tests;
 
 import com.herokuapp.theinternet.base.BaseTest;
-import com.herokuapp.theinternet.pages.AddRemovePage;
-import com.herokuapp.theinternet.pages.CheckboxesPage;
-import com.herokuapp.theinternet.pages.HomePage;
-import com.herokuapp.theinternet.pages.KeyPressesPage;
+import com.herokuapp.theinternet.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -28,8 +25,6 @@ public class NewTest extends BaseTest {
             .assertIfNoCheckboxesAreChecked();
 
   }
-
-
   @Test
   public void AddRemoveTest(){
     AddRemovePage.
@@ -39,6 +34,24 @@ public class NewTest extends BaseTest {
             clickDelete(3).
             assertQuantity(0);
 
+  }
+
+  @Test
+  public void DropdownTest() throws InterruptedException {
+    DropdownPage.
+            action().
+            load().
+            clickOption("2").
+            assertSelected("2");
+  }
+
+  @Test
+  public void TypoTest(){
+
+    TypoPage.
+            action().
+            load().
+            assertIfTextHasATypo();
   }
 
 }

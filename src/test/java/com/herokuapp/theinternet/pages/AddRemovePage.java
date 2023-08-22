@@ -49,7 +49,7 @@ public class AddRemovePage extends BasePage {
 
     public AddRemovePage clickDelete(int times){
         for (int i = 0; i < times; i++) {
-            deleteElement.get(0).click();
+            clickDelete();
         }
         return this;
     }

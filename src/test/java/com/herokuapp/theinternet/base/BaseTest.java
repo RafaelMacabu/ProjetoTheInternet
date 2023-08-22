@@ -1,6 +1,8 @@
 package com.herokuapp.theinternet.base;
 
-import com.herokuapp.theinternet.factory.DriverManager;
+import com.herokuapp.theinternet.constants.BrowserType;
+import com.herokuapp.theinternet.factory.ChromeDriverManager;
+import com.herokuapp.theinternet.factory.DriverManagerFactory;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -30,9 +32,11 @@ public class BaseTest {
     }
 
 
+    @Parameters("browser")
     @BeforeMethod
-    public void startDriver(){
-        setDriver(DriverManager.createDriver());
+    public void startDriver(@Optional("FIREFOX") String browser ){
+        browser = System.getProperty("browser",browser);
+        setDriver(DriverManagerFactory.getManager(BrowserType.valueOf(browser)).createDriver());
         System.out.println("CURRENT THREAD:" + Thread.currentThread().getId());
         wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
