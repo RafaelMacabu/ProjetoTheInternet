@@ -54,4 +54,15 @@ public class NewTest extends BaseTest {
             assertIfTextHasATypo();
   }
 
+  @Test
+  public void LoginTest(){
+    LoginPage.
+            action().
+            load().
+            inputUsername("tomsmith").
+            inputPassword("").
+            clickLoginButton().
+            assertLoginWrongpassword();
+  }
+
 }
