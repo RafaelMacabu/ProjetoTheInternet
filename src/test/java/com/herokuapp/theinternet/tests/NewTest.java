@@ -63,6 +63,16 @@ public class NewTest extends BaseTest {
             inputPassword("").
             clickLoginButton().
             assertLoginWrongpassword();
+
+
+  }
+
+  @Test
+  public void HorizontalSliderTest(){
+    HorizontalSliderPage.action()
+            .load()
+            .scroll(100)
+            .AssertResult("5");
   }
 
 }
