@@ -34,7 +34,7 @@ public class BaseTest {
 
     @Parameters("browser")
     @BeforeMethod
-    public void startDriver(@Optional("FIREFOX") String browser ){
+    public void startDriver(@Optional("CHROME") String browser ){
         browser = System.getProperty("browser",browser);
         setDriver(DriverManagerFactory.getManager(BrowserType.valueOf(browser)).createDriver());
         System.out.println("CURRENT THREAD:" + Thread.currentThread().getId());

@@ -5,6 +5,9 @@ import com.herokuapp.theinternet.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import javax.script.ScriptException;
+import java.io.FileNotFoundException;
+
 public class NewTest extends BaseTest {
 
   @Test
@@ -69,10 +72,29 @@ public class NewTest extends BaseTest {
 
   @Test
   public void HorizontalSliderTest(){
-    HorizontalSliderPage.action()
-            .load()
-            .scroll(100)
-            .AssertResult("5");
+    HorizontalSliderPage.
+            action().
+            load().
+            scroll(100).
+            AssertResult("5");
+  }
+
+  @Test //não funciona até eu descobrir como injetar javascript no codigo
+  public void DragAndDropTest() throws ScriptException, FileNotFoundException {
+    DragAndDropPage.
+            action().
+            load().
+            dragAndDropColumn1();
+  }
+
+  @Test
+  public void UploadTest(){
+    UploadPage.
+            action().
+            load().
+            uploadFile().
+            clickUploadButton().
+            assertFileName("test-file.txt");
   }
 
 }
