@@ -97,4 +97,12 @@ public class NewTest extends BaseTest {
             assertFileName("test-file.txt");
   }
 
+  @Test
+  public void DisappearingElementTest(){
+    DisappearingPage.
+            action().
+            load().
+            assertIfElementisPresent();
+  }
+
 }
