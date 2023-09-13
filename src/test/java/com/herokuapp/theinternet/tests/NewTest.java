@@ -105,4 +105,13 @@ public class NewTest extends BaseTest {
             assertIfElementisPresent();
   }
 
+  @Test
+  public void FloatingMenuTest(){
+    FloatingMenuPage.
+            action().
+            load().
+            clickHome().
+            assertUrl("http://the-internet.herokuapp.com/floating_menu#home");
+  }
+
 }
