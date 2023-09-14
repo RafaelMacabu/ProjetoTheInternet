@@ -114,4 +114,14 @@ public class NewTest extends BaseTest {
             assertUrl("http://the-internet.herokuapp.com/floating_menu#home");
   }
 
+  @Test
+  public void NotificationTest(){
+    NotificationPage.
+            action().
+            load().
+            clickButton().
+            assertNotificationSucessful("Action successful\n" +
+                    "×");
+  }
+
 }
