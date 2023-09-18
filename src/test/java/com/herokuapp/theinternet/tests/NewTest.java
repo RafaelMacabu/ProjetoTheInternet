@@ -124,4 +124,13 @@ public class NewTest extends BaseTest {
                     "×");
   }
 
+  @Test
+  public void HoverTest(){
+    HoversPage.
+            action().
+            load().
+            hoverFigure(3).
+            assertFigureIsHovered(3);
+  }
+
 }
