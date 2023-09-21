@@ -133,4 +133,12 @@ public class NewTest extends BaseTest {
             assertFigureIsHovered(3);
   }
 
+  @Test
+  public void BasicAuthTest(){
+    BasicAuthPage.
+            action().
+            loadWithAuth().
+            assertAuth();
+  }
+
 }
