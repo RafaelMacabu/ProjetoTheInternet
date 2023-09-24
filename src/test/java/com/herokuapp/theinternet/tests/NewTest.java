@@ -141,4 +141,13 @@ public class NewTest extends BaseTest {
             assertAuth();
   }
 
+  @Test
+  public void NewWindowTest(){
+    NewWindowPage.
+            action().
+            load().
+            setWindows().
+            assertNewWindowIsDisplayed();
+  }
+
 }
