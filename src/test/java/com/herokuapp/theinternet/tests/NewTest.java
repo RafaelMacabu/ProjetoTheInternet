@@ -150,4 +150,14 @@ public class NewTest extends BaseTest {
             assertNewWindowIsDisplayed();
   }
 
+  @Test
+  public void ContextMenuPage(){
+    ContextMenuPage.
+            action().
+            load().
+            contextClickHotspot().
+            assertAlertMessage();
+
+  }
+
 }
