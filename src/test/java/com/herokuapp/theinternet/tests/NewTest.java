@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 
 public class NewTest extends BaseTest {
 
-  @Test
+    @Test
   public void KeyPressesTest() throws InterruptedException {
     KeyPressesPage.action()
             .load()
@@ -151,13 +151,24 @@ public class NewTest extends BaseTest {
   }
 
   @Test
-  public void ContextMenuPage(){
+  public void ContextMenuTest(){
     ContextMenuPage.
             action().
             load().
             contextClickHotspot().
             assertAlertMessage();
 
+  }
+
+  @Test
+  public void JSAlertTest(){
+      JSAlertsPage.
+              action().
+              load().
+              clickJSInputPrompt().
+              inputAlert("sexo").
+              acceptAlert().
+              assertJSInputAlert("sexo");
   }
 
 }
