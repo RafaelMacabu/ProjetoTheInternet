@@ -171,4 +171,13 @@ public class NewTest extends BaseTest {
               assertJSInputAlert("sexo");
   }
 
+  @Test
+  public void DynamicContentTest(){
+      DynamicContentPage.
+              action().
+              load().
+              makeStatic().
+              assertContentIsStatic();
+  }
+
 }
