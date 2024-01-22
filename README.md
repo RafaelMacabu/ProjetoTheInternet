@@ -4,7 +4,7 @@
 Feito com base no _front_ [**The Internet**](https://the-internet.herokuapp.com/)
 
 ## Tecnologias Usadas
-* **Java** Versão 11 (Linguagem principal)
+* **Java** Versão 11 (Linguagem de código principal)
 * **Selenium** (Automatização de páginas web)
 * **TestNG** (Execução de classes de teste)
 
